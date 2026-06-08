@@ -1,0 +1,49 @@
+<!-- home.component.html -->
+
+<section class="hero">
+  <div class="hero-content">
+    <h1>Conoce todo sobre tu juego favorito</h1>
+    <p>
+      Demuestra tus habilidades
+    </p>
+
+    <div class="hero-buttons">
+      <button class="primary-btn">Comenzar</button>
+      <button class="secondary-btn">Ver más</button>
+    </div>
+  </div>
+
+  <div class="hero-image">
+    <img src="lol.webp" alt="Hero Image" />
+  </div>
+</section>
+
+<section class="features">
+  <div class="section-title">
+    <h2>Listado de personajes</h2>
+    <p>Todo lo que necesitas saber sobre los personajes del juego.</p>
+  </div>
+
+  <div class="features-grid">
+
+    @for(character of characters; track character.id){
+      <div class="feature-card">
+        <div class="feature-icon"><img src="{{character.thumbnailUrl}}"></div>
+        <h3><a href="character/{{character.id}}">{{character.name}}</a></h3>
+        <p>{{character.title}}</p>
+      </div>
+    }
+
+  </div>
+</section>
+
+<section class="cta">
+  <div class="cta-content">
+    <h2>Empieza hoy mismo</h2>
+    <p>
+      Crea aplicaciones increíbles con una estructura moderna y mantenible.
+    </p>
+
+    <button class="primary-btn">Crear proyecto</button>
+  </div>
+</section>

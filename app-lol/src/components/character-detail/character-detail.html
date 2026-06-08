@@ -1,0 +1,55 @@
+<div class="detail-container">
+
+  <div class="header">
+    <img
+      [src]="character?.thumbnailUrl"
+      [alt]="character?.name"
+      class="champion-image"
+    >
+
+    <div class="info">
+      <h1>{{ character?.name }}</h1>
+      <h2>{{ character?.title }}</h2>
+
+      <span class="champion-id">
+        Champion ID: {{ character?.championId }}
+      </span>
+    </div>
+  </div>
+
+  <div class="content">
+
+    <div class="card">
+      <h3>Información General</h3>
+
+      <p>
+        <strong>ID:</strong>
+        {{ character?.id }}
+      </p>
+
+      <p>
+        <strong>Nombre:</strong>
+        {{ character?.name }}
+      </p>
+
+      <p>
+        <strong>Título:</strong>
+        {{ character?.title }}
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>Roles</h3>
+
+      <div class="roles">
+        @for(role of character?.roles; track role){
+            <span class="role-badge" >
+                {{ role }}
+            </span>
+        }
+      </div>
+    </div>
+
+  </div>
+
+</div>

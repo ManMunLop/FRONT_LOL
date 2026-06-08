@@ -1,0 +1,72 @@
+.detail-container {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.header {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  background: #1e293b;
+  color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+}
+
+.champion-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.info h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+.info h2 {
+  margin-top: 0.5rem;
+  font-weight: 400;
+  color: #cbd5e1;
+}
+
+.champion-id {
+  display: inline-block;
+  margin-top: 1rem;
+  background: #334155;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+}
+
+.content {
+  margin-top: 1.5rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: #f8fafc;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.card h3 {
+  margin-top: 0;
+}
+
+.roles {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.role-badge {
+  background: #2563eb;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+}
