@@ -2,180 +2,141 @@
 
 :host {
   display: block;
-  background-color: #f8fafc;
+  background-color: #0b0f19;
   min-height: 100vh;
 }
 
-.contact-page {
-  padding: 4rem 8%;
+.support-layout {
+  padding: 5rem 10%;
 }
 
-/* HEADER */
-
-.contact-header {
+.support-heading {
   text-align: center;
-  margin-bottom: 3rem;
+  margin-bottom: 4rem;
 }
 
-.contact-header h1 {
-  font-size: 3rem;
-  color: #0f172a;
+.support-heading h1 {
+  font-size: 3.2rem;
+  color: #ffffff;
+  font-weight: 800;
   margin-bottom: 1rem;
 }
 
-.contact-header p {
-  max-width: 700px;
+.support-heading p {
+  max-width: 650px;
   margin: 0 auto;
-  color: #64748b;
-  line-height: 1.8;
+  color: #94a3b8;
+  line-height: 1.7;
   font-size: 1.1rem;
 }
 
-/* CARD CONTACTO PRINCIPAL */
-
-.contact-person-card {
-  width: 100%;
-  background-color: white;
-  border-radius: 24px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.06);
+/* CARDS SOPORTE */
+.support-agent-wrapper {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 3rem;
+  margin-bottom: 2.5rem;
 }
 
-.contact-person-card h2 {
-  margin-bottom: 2rem;
-  color: #1e293b;
-  font-size: 1.8rem;
+.support-agent-wrapper h2,
+.corporate-info-panel h2,
+.corporate-map-panel h2 {
+  font-size: 1.6rem;
+  color: #ffffff;
+  margin-bottom: 1.8rem;
+  font-weight: 700;
 }
 
-.profile {
+.agent-profile-row {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 2.5rem;
 }
 
-.profile-image {
-  width: 130px;
-  height: 130px;
+.agent-avatar {
+  width: 120px;
+  height: 120px;
   border-radius: 50%;
   object-fit: cover;
-  border: 4px solid #e2e8f0;
+  border: 3px solid #d97706;
 }
 
-.profile-info h3 {
-  font-size: 2rem;
-  margin-bottom: 0.5rem;
-  color: #0f172a;
+.agent-metadata h3 {
+  font-size: 1.8rem;
+  color: #ffffff;
+  margin-bottom: 0.4rem;
 }
 
-.role {
-  color: #3b82f6;
+.agent-position {
+  color: #d97706;
   font-weight: 600;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.2rem;
 }
 
-.profile-details {
+.agent-contact-channels {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem 2rem;
-  color: #475569;
-  font-size: 1rem;
+  gap: 1.5rem 2.5rem;
+  color: #cbd5e1;
 }
 
-/* GRID */
-
-.contact-container {
+/* GRID E INFOS */
+.support-details-grid {
   display: grid;
-  grid-template-columns: 1fr 1.2fr;
-  gap: 2rem;
+  grid-template-columns: 1fr 1.3fr;
+  gap: 2.5rem;
 }
 
-/* CARDS */
-
-.info-card,
-.map-card {
-  background-color: white;
-  border-radius: 20px;
-  padding: 2rem;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+.corporate-info-panel,
+.corporate-map-panel {
+  background-color: #0f172a;
+  border: 1px solid #1e293b;
+  border-radius: 16px;
+  padding: 2.5rem;
 }
 
-.info-card h2,
-.map-card h2 {
-  margin-bottom: 2rem;
-  color: #1e293b;
-}
-
-/* INFO */
-
-.info-item {
+.corporate-row {
   display: flex;
-  gap: 1rem;
-  margin-bottom: 1.8rem;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.icon {
-  font-size: 1.5rem;
+.row-icon {
+  font-size: 1.6rem;
+  color: #d97706;
 }
 
-.info-item h3 {
-  margin-bottom: 0.3rem;
-  color: #0f172a;
+.row-text h3 {
+  font-size: 1.05rem;
+  color: #ffffff;
+  margin-bottom: 0.2rem;
 }
 
-.info-item p {
-  color: #64748b;
+.row-text p {
+  color: #94a3b8;
   line-height: 1.5;
 }
 
-/* MAPA */
-
-.map-card iframe {
+.corporate-map-panel iframe {
   width: 100%;
-  height: 400px;
+  height: 380px;
   border: none;
-  border-radius: 14px;
+  border-radius: 10px;
+  filter: grayscale(1) invert(0.9) contrast(1.2); /* Estilo de mapa cyberpunk oscuro */
 }
 
-/* RESPONSIVE */
-
 @media (max-width: 992px) {
-
-  .contact-container {
+  .support-details-grid {
     grid-template-columns: 1fr;
   }
 
-  .profile {
+  .agent-profile-row {
     flex-direction: column;
     text-align: center;
   }
 
-  .profile-details {
+  .agent-contact-channels {
     justify-content: center;
-  }
-
-  .map-card iframe {
-    height: 320px;
-  }
-}
-
-@media (max-width: 576px) {
-
-  .contact-page {
-    padding: 3rem 1.5rem;
-  }
-
-  .contact-header h1 {
-    font-size: 2.2rem;
-  }
-
-  .profile-info h3 {
-    font-size: 1.6rem;
-  }
-
-  .contact-person-card,
-  .info-card,
-  .map-card {
-    padding: 1.5rem;
   }
 }

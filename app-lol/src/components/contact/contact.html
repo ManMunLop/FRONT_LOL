@@ -1,103 +1,79 @@
-<!-- contacto.component.html -->
+<section class="support-layout">
 
-<section class="contact-page">
-
-  <div class="contact-header">
-    <h1>Contacto</h1>
-    <p>
-      Estamos disponibles para ayudarte. Ponte en contacto con nosotros
-      mediante cualquiera de los siguientes medios.
-    </p>
+  <div class="support-heading">
+    <h1>Canales de Comunicación</h1>
+    <p>¿Tienes dudas con la sincronización de la API? Nuestro equipo técnico te atenderá a la brevedad.</p>
   </div>
 
-  <!-- PERSONA DE CONTACTO -->
-  <div class="contact-person-card">
+  <div class="support-agent-wrapper">
+    <h2>Soporte Especializado</h2>
 
-    <h2>Persona de contacto</h2>
-
-    <div class="profile">
-
+    <div class="agent-profile-row">
       <img
-        src="assets/profile.jpg"
-        alt="Perfil"
-        class="profile-image"
+        [src]="'assets/profile.jpg'"
+        alt="Asesor Técnico"
+        class="agent-avatar"
       />
 
-      <div class="profile-info">
+      <div class="agent-metadata">
+        <h3>Área de Integración API</h3>
+        <p class="agent-position">Coordinador de Sistemas Externos</p>
 
-        <h3>Juan Pérez</h3>
-
-        <p class="role">
-          Responsable de atención al cliente
-        </p>
-
-        <div class="profile-details">
-          <span>📱 +34 611 111 111</span>
-          <span>✉️ juanperez@miapp.com</span>
-          <span>📍 Sevilla, España</span>
+        <div class="agent-contact-channels">
+          <span>📱 Link Directo: +34 611 111 111</span>
+          <span>✉️ dev-support@losalcores.com</span>
+          <span>📍 Sede Central: Sevilla, España</span>
         </div>
-
       </div>
-
     </div>
-
   </div>
 
-  <!-- CONTENIDO -->
-  <div class="contact-container">
+  <div class="support-details-grid">
 
-    <!-- EMPRESA -->
-    <div class="info-card">
+    <div class="corporate-info-panel">
+      <h2>Datos Entidad</h2>
 
-      <h2>Información de la empresa</h2>
-
-      <div class="info-item">
-        <span class="icon">🏢</span>
-        <div>
-          <h3>Empresa</h3>
-          <p>Mi Aplicación S.L.</p>
+      <div class="corporate-row">
+        <span class="row-icon">🏢</span>
+        <div class="row-text">
+          <h3>Organización</h3>
+          <p>Sistemas Web Alcores S.L.</p>
         </div>
       </div>
 
-      <div class="info-item">
-        <span class="icon">📧</span>
-        <div>
-          <h3>Email</h3>
-          <p>info@miapp.com</p>
+      <div class="corporate-row">
+        <span class="row-icon">📧</span>
+        <div class="row-text">
+          <h3>Consultas Generales</h3>
+          <p>administracion@losalcores.com</p>
         </div>
       </div>
 
-      <div class="info-item">
-        <span class="icon">📞</span>
-        <div>
-          <h3>Teléfono</h3>
+      <div class="corporate-row">
+        <span class="row-icon">📞</span>
+        <div class="row-text">
+          <h3>Centralita</h3>
           <p>+34 600 000 000</p>
         </div>
       </div>
 
-      <div class="info-item">
-        <span class="icon">🕒</span>
-        <div>
-          <h3>Horario</h3>
-          <p>Lunes a Viernes · 09:00 - 18:00</p>
+      <div class="corporate-row">
+        <span class="row-icon">🕒</span>
+        <div class="row-text">
+          <h3>Atención al público</h3>
+          <p>Lunes a Viernes · Bloque de mañana y tarde (09:00 - 18:00)</p>
         </div>
       </div>
-
     </div>
 
-    <!-- MAPA -->
-    <div class="map-card">
-
-      <h2>Ubicación</h2>
-
+    <div class="corporate-map-panel">
+      <h2>Geolocalización</h2>
       <iframe
         src="https://www.google.com/maps/embed?pb=!1m18..."
         allowfullscreen=""
         loading="lazy">
       </iframe>
-
     </div>
 
   </div>
-
 </section>

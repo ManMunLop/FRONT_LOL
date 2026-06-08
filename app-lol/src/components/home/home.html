@@ -1,49 +1,61 @@
-<!-- home.component.html -->
+<section class="main-banner">
+  <div class="banner-inner">
+    <h1>Explora el Ecosistema de Runaterra</h1>
+    <p>Analiza las estadísticas y destrezas de cada invocador.</p>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>Conoce todo sobre tu juego favorito</h1>
-    <p>
-      Demuestra tus habilidades
-    </p>
-
-    <div class="hero-buttons">
-      <button class="primary-btn">Comenzar</button>
-      <button class="secondary-btn">Ver más</button>
+    <div class="banner-actions">
+      <button class="btn-action-primary">Descubrir</button>
+      <button class="btn-action-secondary">Saber más</button>
     </div>
   </div>
 
-  <div class="hero-image">
-    <img src="lol.webp" alt="Hero Image" />
+  <div class="banner-media">
+    <img [src]="'lol.webp'" alt="Ilustración Principal" />
   </div>
 </section>
 
-<section class="features">
-  <div class="section-title">
-    <h2>Listado de personajes</h2>
-    <p>Todo lo que necesitas saber sobre los personajes del juego.</p>
+<section class="catalog-section">
+  <div class="catalog-header">
+    <h2>Índice de Campeones</h2>
+    <p>Base de datos detallada con la información oficial del juego.</p>
   </div>
 
-  <div class="features-grid">
-
-    @for(character of characters; track character.id){
-      <div class="feature-card">
-        <div class="feature-icon"><img src="{{character.thumbnailUrl}}"></div>
-        <h3><a href="character/{{character.id}}">{{character.name}}</a></h3>
-        <p>{{character.title}}</p>
+  <div class="catalog-layout-grid">
+    @for(item of championList; track item.id){
+      <div class="catalog-item-card">
+        <div class="item-media-wrapper">
+          <img [src]="item.thumbnailUrl" alt="Avatar {{ item.name }}">
+        </div>
+        <h3><a href="character/{{item.id}}">{{item.name}}</a></h3>
+        <p class="item-subtitle">{{item.title}}</p>
       </div>
     }
-
   </div>
 </section>
 
-<section class="cta">
-  <div class="cta-content">
-    <h2>Empieza hoy mismo</h2>
-    <p>
-      Crea aplicaciones increíbles con una estructura moderna y mantenible.
-    </p>
-
-    <button class="primary-btn">Crear proyecto</button>
+<section class="banner-engagement">
+  <div class="engagement-body">
+    <h2>Comienza tu Análisis</h2>
+    <p>Optimiza tus estrategias de desarrollo utilizando datos estructurados y limpios.</p>
+    <button class="btn-action-primary">Configurar Entorno</button>
   </div>
 </section>
+
+<header class="navbar-wrapper">
+  <div class="brand-identity">
+    <img [src]="'league-of-legends-logo.png'" alt="Logotipo Oficial" class="brand-logo" />
+    <span class="brand-text">LoL Hub</span>
+  </div>
+
+  <nav class="navigation-links">
+    <a routerLink="/" routerLinkActive="active-route" [routerLinkActiveOptions]="routeConfiguration" class="menu-item">Dashboard</a>
+    <a routerLink="/multirol" routerLinkActive="active-route" class="menu-item">Roles Globales</a>
+    <a href="#" class="menu-item">Comunidad</a>
+    <a href="#" class="menu-item">Recursos</a>
+    <a routerLink="/contact" routerLinkActive="active-route" class="menu-item">Soporte</a>
+  </nav>
+
+  <div class="navigation-actions">
+    <button routerLink="/multirol" class="btn-nav-redirect">Explorar Listado</button>
+  </div>
+</header>

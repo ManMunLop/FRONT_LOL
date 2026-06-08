@@ -1,28 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
+import { CharacterService } from '../../services/character-service'; 
 import { Character } from '../../model/character';
-import { CharacterService } from '../../services/character-service';
 
 @Component({
   selector: 'app-character-detail',
-  imports: [],
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './character-detail.html',
   styleUrl: './character-detail.css',
 })
 export class CharacterDetail implements OnInit {
 
-  public id: string = '';
-  public character?: Character;
+  // Volvemos a 'character' para hermanarlo con tu HTML sin romper tipados
+  public character: Character | null = null;
 
-  constructor( private _route: ActivatedRoute, private characterService: CharacterService ) { }
+  constructor(
+    private currentRoute: ActivatedRoute,
+    private apiService: CharacterService
+  ) {}
 
   ngOnInit(): void {
-    this.id = this._route.snapshot.paramMap.get('id')!; 
-
-    this.characterService.getCharacterById(this.id).subscribe(result => 
-      this.character = result
-    );
-
+    const championId = this.currentRoute.snapshot.paramMap.get('id');
+    if (championId) {
+      this.fetchChampionDetails(championId);
+    }
   }
 
+  private fetchChampionDetails(id: string): void {
+    this.apiService.getCharacterById(id).subscribe({
+      next: (response) => {
+        this.character = response;
+        console.log('Datos del campeón obtenidos:', this.character);
+      },
+      error: (err) => {
+        console.error('Error en el servicio de infraestructura:', err);
+      }
+    });
+  }
 }

@@ -1,72 +1,113 @@
-.detail-container {
-  max-width: 900px;
-  margin: 2rem auto;
-  padding: 1rem;
+/* detail.component.css */
+
+.profile-detail-view {
+  max-width: 950px;
+  margin: 3rem auto;
+  padding: 0 1.5rem;
 }
 
-.header {
+.profile-jumbotron {
   display: flex;
-  gap: 2rem;
+  gap: 2.5rem;
   align-items: center;
-  background: #1e293b;
-  color: white;
-  padding: 1.5rem;
-  border-radius: 12px;
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
-.champion-image {
-  width: 120px;
-  height: 120px;
-  border-radius: 12px;
+.profile-jumbotron-avatar {
+  width: 130px;
+  height: 130px;
+  border-radius: 14px;
   object-fit: cover;
+  border: 2px solid #475569;
 }
 
-.info h1 {
+.profile-jumbotron-meta h1 {
   margin: 0;
-  font-size: 2rem;
+  font-size: 2.4rem;
+  color: #ffffff;
+  font-weight: 800;
 }
 
-.info h2 {
-  margin-top: 0.5rem;
+.profile-jumbotron-meta h2 {
+  margin-top: 0.4rem;
   font-weight: 400;
-  color: #cbd5e1;
+  color: #94a3b8;
+  font-size: 1.3rem;
 }
 
-.champion-id {
+.profile-uid-indicator {
   display: inline-block;
-  margin-top: 1rem;
-  background: #334155;
-  padding: 0.4rem 0.8rem;
+  margin-top: 1.2rem;
+  background: #0b0f19;
+  color: #d97706;
+  border: 1px solid rgba(217, 119, 6, 0.2);
+  padding: 0.4rem 0.9rem;
   border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
 }
 
-.content {
-  margin-top: 1.5rem;
+.profile-extended-content {
+  margin-top: 2rem;
   display: grid;
-  gap: 1rem;
+  grid-template-columns: 1.3fr 1fr;
+  gap: 2rem;
 }
 
-.card {
-  background: #f8fafc;
-  padding: 1rem;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0,0,0,.08);
+.content-panel-card {
+  background: #0f172a;
+  border: 1px solid #1e293b;
+  padding: 2rem;
+  border-radius: 14px;
 }
 
-.card h3 {
+.content-panel-card h3 {
   margin-top: 0;
+  font-size: 1.25rem;
+  color: #ffffff;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #1e293b;
+  padding-bottom: 0.8rem;
 }
 
-.roles {
+.content-panel-card p {
+  color: #cbd5e1;
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.content-panel-card strong {
+  color: #64748b;
+  margin-right: 0.5rem;
+}
+
+.badges-flex-wrapper {
   display: flex;
-  gap: 0.5rem;
+  gap: 0.7rem;
   flex-wrap: wrap;
 }
 
-.role-badge {
-  background: #2563eb;
-  color: white;
-  padding: 0.4rem 0.8rem;
-  border-radius: 20px;
-  font-size: 0.9rem;
+.badge-pill-role {
+  background: #d97706;
+  color: #0b0f19;
+  padding: 0.4rem 1rem;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+@media (max-width: 768px) {
+  .profile-jumbotron {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .profile-extended-content {
+    grid-template-columns: 1fr;
+  }
 }

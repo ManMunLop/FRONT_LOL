@@ -1,82 +1,83 @@
 /* header.component.css */
 
-.app-header {
+.navbar-wrapper {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 2rem;
-  height: 70px;
-  background-color: #1e293b;
-  color: white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  padding: 0 3rem;
+  height: 75px;
+  background-color: #0b0f19;
+  border-bottom: 1px solid #1e293b;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-.logo-container {
+.brand-identity {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 1rem;
 }
 
-.logo {
-  width: 40px;
-  height: 40px;
+.brand-logo {
+  width: 42px;
+  height: 42px;
   object-fit: contain;
 }
 
-.brand-name {
-  font-size: 1.2rem;
-  font-weight: 600;
-}
-
-.nav-menu {
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-link {
-  text-decoration: none;
-  color: #cbd5e1;
-  font-weight: 500;
-  transition: color 0.3s ease;
-}
-
-.nav-link:hover,
-.nav-link.active {
+.brand-text {
+  font-size: 1.25rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
   color: #ffffff;
 }
 
-.actions {
+.navigation-links {
   display: flex;
-  align-items: center;
+  gap: 2rem;
 }
 
-.login-btn {
-  padding: 0.5rem 1rem;
-  border: none;
+.menu-item {
+  text-decoration: none;
+  color: #94a3b8;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: all 0.2s ease;
+}
+
+.menu-item:hover,
+.menu-item.active-route {
+  color: #d97706;
+}
+
+.btn-nav-redirect {
+  padding: 0.6rem 1.2rem;
+  border: 1px solid #d97706;
   border-radius: 6px;
-  background-color: #3b82f6;
-  color: white;
+  background-color: rgba(217, 119, 6, 0.05);
+  color: #d97706;
   font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: all 0.2s ease;
 }
 
-.login-btn:hover {
-  background-color: #2563eb;
+.btn-nav-redirect:hover {
+  background-color: #d97706;
+  color: #0b0f19;
 }
-
-/* Responsive */
 
 @media (max-width: 768px) {
-  .app-header {
+  .navbar-wrapper {
     flex-direction: column;
     height: auto;
-    padding: 1rem;
-    gap: 1rem;
+    padding: 1.5rem;
+    gap: 1.2rem;
   }
 
-  .nav-menu {
+  .navigation-links {
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.2rem;
   }
 }

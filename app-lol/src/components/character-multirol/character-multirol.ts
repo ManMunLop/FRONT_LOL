@@ -1,14 +1,15 @@
 import { Component, OnInit } from '@angular/core';
 import { Character } from '../../model/character';
 import { CharacterService } from '../../services/character-service';
+import { RouterLink } from '@angular/router';
 
 @Component({
-  selector: 'app-character-multiple-rol',
-  imports: [],
-  templateUrl: './character-multiple-rol.html',
-  styleUrl: './character-multiple-rol.css',
+  selector: 'app-character-multirol',
+  imports: [RouterLink],
+  templateUrl: './character-multirol.html',
+  styleUrl: './character-multirol.css',
 })
-export class CharacterMultipleRol implements OnInit{
+export class CharacterMultirol implements OnInit{
 
   public characters: Character[]=[];
 

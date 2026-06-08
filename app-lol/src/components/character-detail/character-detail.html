@@ -1,55 +1,39 @@
-<div class="detail-container">
-
-  <div class="header">
-    <img
-      [src]="character?.thumbnailUrl"
-      [alt]="character?.name"
-      class="champion-image"
-    >
-
-    <div class="info">
-      <h1>{{ character?.name }}</h1>
-      <h2>{{ character?.title }}</h2>
-
-      <span class="champion-id">
-        Champion ID: {{ character?.championId }}
-      </span>
-    </div>
-  </div>
-
-  <div class="content">
-
-    <div class="card">
-      <h3>Información General</h3>
-
-      <p>
-        <strong>ID:</strong>
-        {{ character?.id }}
-      </p>
-
-      <p>
-        <strong>Nombre:</strong>
-        {{ character?.name }}
-      </p>
-
-      <p>
-        <strong>Título:</strong>
-        {{ character?.title }}
-      </p>
-    </div>
-
-    <div class="card">
-      <h3>Roles</h3>
-
-      <div class="roles">
-        @for(role of character?.roles; track role){
-            <span class="role-badge" >
-                {{ role }}
-            </span>
-        }
+@if (character) {
+  <div class="profile-detail-view">
+    
+    <div class="profile-jumbotron">
+      <img [src]="character.thumbnailUrl" [alt]="character.name" class="profile-jumbotron-avatar" />
+      
+      <div class="profile-jumbotron-meta">
+        <h1>{{ character.name }}</h1>
+        <h2>{{ character.title }}</h2>
+        <span class="profile-uid-indicator">Identificador: {{ character.id }}</span>
       </div>
     </div>
 
-  </div>
+    <div class="profile-extended-content">
+      
+      <div class="content-panel-card">
+        <h3>Ficha Técnica del Campeón</h3>
+        <p><strong>Nombre Operativo:</strong> {{ character.name }}</p>
+        <p><strong>Rango/Título:</strong> {{ character.title }}</p>
+        <p><strong>Index Interno:</strong> Código #{{ character.id }}</p>
+      </div>
 
-</div>
+      <div class="content-panel-card">
+        <h3>Roles Asignados en la Grieta</h3>
+        <div class="badges-flex-wrapper">
+          @for (role of character.roles; track role) {
+            <span class="badge-pill-role">{{ role }}</span>
+          }
+        </div>
+      </div>
+
+    </div>
+  </div>
+} @else {
+  <div class="fallback-loading-state" style="text-align: center; padding: 6rem 2rem; color: #64748b;">
+    <div class="custom-loader-spinner" style="border: 3px solid rgba(255, 255, 255, 0.05); width: 45px; height: 45px; border-radius: 50%; border-left-color: #d97706; animation: spin 0.8s linear infinite; margin: 0 auto 1.5rem auto;"></div>
+    <p>Sincronizando con el servidor de datos...</p>
+  </div>
+}

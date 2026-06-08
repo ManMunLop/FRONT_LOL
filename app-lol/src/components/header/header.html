@@ -1,20 +1,18 @@
-<header class="app-header">
-  <div class="logo-container">
-    <img src="league-of-legends-logo.png" alt="Logo" class="logo" />
-    <span class="brand-name">League of Legends</span>
+<header class="navbar-wrapper">
+  <div class="brand-identity">
+    <img src="league-of-legends-logo.png" alt="Logo" class="brand-logo" />
+    <span class="brand-text">League of Legends</span>
   </div>
 
-  <nav class="nav-menu">
-    <a routerLink="/" routerLinkActive="active" [routerLinkActiveOptions]="exactRouteOptions" class="nav-link">Inicio</a>
-    
-    <a routerLink="/multiple-rol" routerLinkActive="active" class="nav-link">Personajes</a>
-    
-    <a href="#" class="nav-link">La comunidad</a>
-    <a href="#" class="nav-link">Enlaces externos</a>
-    <a routerLink="/contact" routerLinkActive="active" class="nav-link">Contacto</a>
+  <nav class="navigation-links">
+    <a routerLink="/" routerLinkActive="active-route" [routerLinkActiveOptions]="exactRouteOptions" class="menu-item">Inicio</a>
+    <a routerLink="/multirol" routerLinkActive="active-route" class="menu-item">Personajes</a>
+    <a href="#" class="menu-item">La comunidad</a>
+    <a href="#" class="menu-item">Enlaces externos</a>
+    <a routerLink="/contact" routerLinkActive="active-route" class="menu-item">Contacto</a>
   </nav>
 
-  <div class="actions">
-    <button routerLink="/multiple-rol" class="login-btn">Ver Campeones</button>
+  <div class="navigation-actions">
+    <button routerLink="/multirol" class="btn-nav-redirect">Ver Campeones</button>
   </div>
 </header>
