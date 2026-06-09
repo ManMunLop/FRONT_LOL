@@ -27,4 +27,7 @@ export class CharacterService {
     return this._http.get<Character[]>(this._baseUrl + "/filter/multirole");
   }
 
+  public getCharacterTank(): Observable<Character[]>{
+    return this._http.get<Character[]>(this._baseUrl + "/filter/tank");
+  }
 }

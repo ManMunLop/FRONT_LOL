@@ -1,0 +1,45 @@
+<div class="dashboard-container">
+  <header class="dashboard-section-header">
+    <h2>Tanques de League of Legends</h2>
+    <p>Listado de personajes que sobresalen por su resistencia y control en equipo.</p>
+  </header>
+
+  @if (characters && characters.length > 0) {
+    <div class="champions-flex-grid">
+      @for (item of characters; track item.id) {
+        <div class="champion-data-card">
+          <div class="champion-asset-box">
+            <img
+              [src]="item.thumbnailUrl || 'https://via.placeholder.com/300x200'"
+              [alt]="item.name"
+              class="champion-asset-img"
+            />
+            <span class="champion-uid-tag">Nº Ref: {{ item.championId }}</span>
+          </div>
+
+          <div class="champion-meta-body">
+            <h3 class="champion-meta-name">{{ item.name }}</h3>
+            <h4 class="champion-meta-title">{{ item.title }}</h4>
+
+            <div class="tags-group">
+              @for (rol of item.roles; track rol) {
+                <span class="badge-role-item">{{ rol }}</span>
+              }
+            </div>
+          </div>
+
+          <div class="champion-card-actions">
+            <button [routerLink]="['/character', item.id]" class="btn-trigger-details">
+              Ficha Técnica
+            </button>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="fallback-loading-state">
+      <div class="custom-loader-spinner"></div>
+      <p>Sincronizando registros de tanques...</p>
+    </div>
+  }
+</div>
